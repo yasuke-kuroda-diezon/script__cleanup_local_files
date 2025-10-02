@@ -9,7 +9,7 @@
 ### 初回セットアップ
 1. スクリプトを任意の場所に配置します（例: `~/practice/script_local/`）
 	```sh
-	cd ~/practice/script_local/
+	cd ~/practice/
 	git clone git@github.com:yasuke-kuroda-diezon/cleanup_local_files.git
 	```
 2. `~/Desktop` と `~/Downloads` に git リポジトリを作成します（初回のみ)
@@ -21,22 +21,16 @@
 	```
 3. スクリプトに実行権限を付与します
 	```sh
-	chmod +x ./cleanup_local_files.sh
+	chmod +x ~/practice/cleanup_local_files/index.sh
 	```
 
 ### 日々の使い方
 以下のコマンドで実行できます。
 ```sh
 cd ~
-./practice/script_local/cleanup_local_files.sh
+./practice/cleanup_local_files/index.sh
 ```
 
-## 注意事項
+## memo
 - 各ディレクトリに `.git` ディレクトリが必要です。
 - `rm`コマンドを実行するのは怖いので、(~/Desktop/を削除するとかあり得そうなので)、git cleanコマンドを利用して安全に削除する方針としました。
-
-## スクリプト一覧
-
-| コマンド                  | 処理内容                                                                 |
-|---------------------------|--------------------------------------------------------------------------|
-| ./cleanup_local_files.sh  | git clean -f -d で未追跡ファイル・フォルダを削除（Desktop, Downloads対象） |
