@@ -20,10 +20,9 @@ function logError() {
 
 function printDirectoryInfo() {
     local currentDir=$(basename $(pwd))
-    local repositoryName=$(git remote get-url origin | awk -F/ '{print $NF}')
 
     echo -e "\n========================================================="
-    echo -e "$currentDir : $repositoryName"
+    echo -e "$currentDir"
     echo -e "========================================================="
 }
 
@@ -43,13 +42,23 @@ function main() {
   )
 
   for dir in "${dirs[@]}"; do
-    cd $dir
+    # ~を展開してcdする
+    eval cd $dir
+    if [ $? -ne 0 ]; then
+      logError "cd failed: $dir"
+      continue
+    fi
     printDirectoryInfo
 
-    if gitCleanForce; then
-      logSuccess "deleted untracked files."
+    # .gitディレクトリが存在する場合のみgitコマンドを実行
+    if [ -d .git ]; then
+      if gitCleanForce; then
+        logSuccess "deleted untracked files."
+      else
+        logError "git clean failed."
+      fi
     else
-      logError "git clean failed."
+      logError "not a git repository: $dir"
     fi
   done
 }
