@@ -30,6 +30,7 @@
 cd ~
 ./practice/cleanup_local_files/index.sh
 ```
+<img width="513" height="389" alt="スクリーンショット 2025-10-02 21 25 33" src="https://github.com/user-attachments/assets/082e436c-410a-46ba-b793-a9ff68a98822" />
 
 ## memo
 - 各ディレクトリに `.git` ディレクトリが必要です。
