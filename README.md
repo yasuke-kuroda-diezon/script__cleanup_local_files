@@ -7,11 +7,13 @@
 
 ## 使い方
 ### 初回セットアップ
-1. スクリプトを任意の場所に配置します（例: `~/practice/`）
+1. スクリプトを配置します
+  (場所は任意で、どこにおいても動作します)
 	```sh
-	cd ~/practice
-	git clone git@github.com:yasuke-kuroda-diezon/script_cleanup_local_files.git
+	cd ~/practice/script
+	git clone git@github.com:yasuke-kuroda-diezon/script__cleanup_local_files.git
 	```
+
 2. `~/Desktop` と `~/Downloads` に git リポジトリを作成します（初回のみ)
 	```sh
 	cd ~/Desktop
@@ -19,16 +21,17 @@
 	cd ~/Downloads
 	git init
 	```
+
 3. スクリプトに実行権限を付与します
 	```sh
-	chmod +x ~/practice/script_cleanup_local_files/index.sh
+	chmod +x ~/practice/script/script__cleanup_local_files/index.sh
 	```
 
 ### 日々の使い方
 以下のコマンドで実行できます。
 ```sh
 cd ~
-./practice/script_cleanup_local_files/index.sh
+./practice/script/script__cleanup_local_files/index.sh
 ```
 
 <img width="521" height="337" alt="スクリーンショット 2025-10-05 14 48 50" src="https://github.com/user-attachments/assets/200e9bce-350a-4507-b000-0dbbb843fab0" />
