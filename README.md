@@ -34,7 +34,7 @@ cd ~
 ./practice/script/script__cleanup_local_files/index.sh
 ```
 
-<img width="521" height="337" alt="スクリーンショット 2025-10-05 14 48 50" src="https://github.com/user-attachments/assets/200e9bce-350a-4507-b000-0dbbb843fab0" />
+<img width="550" height="356" alt="スクリーンショット 2025-10-05 15 20 31" src="https://github.com/user-attachments/assets/bf8aafec-09ce-44d3-8603-18131567fe91" />
 
 ## memo
 - 各ディレクトリに `.git` ディレクトリが必要です。
