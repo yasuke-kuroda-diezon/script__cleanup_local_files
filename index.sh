@@ -42,23 +42,24 @@ function main() {
   )
 
   for dir in "${dirs[@]}"; do
-    # ~を展開してcdする
     eval cd $dir
+
     if [ $? -ne 0 ]; then
       logError "cd failed: $dir"
       continue
     fi
+
+    if [ ! -d .git ]; then
+      logError "not a git repository: $dir"
+      continue
+    fi
+
     printDirectoryInfo
 
-    # .gitディレクトリが存在する場合のみgitコマンドを実行
-    if [ -d .git ]; then
-      if gitCleanForce; then
-        logSuccess "deleted untracked files."
-      else
-        logError "git clean failed."
-      fi
+    if gitCleanForce; then
+      logSuccess "deleted untracked files."
     else
-      logError "not a git repository: $dir"
+      logError "git clean failed."
     fi
   done
 }
